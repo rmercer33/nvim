@@ -3,5 +3,6 @@
 -- ABOUT : you may have different global & local leaders
 -- ================================================================================================
 
-vim.g.mapleader = " "
-vim.g.maplocalleader = " "
+-- these are also defined in keymaps.lua and causes a problem
+vim.g.mapleader = ","
+vim.g.maplocalleader = ","
