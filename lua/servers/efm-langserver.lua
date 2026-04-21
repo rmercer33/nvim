@@ -23,7 +23,7 @@ return function(capabilities)
 	local hadolint = require("efmls-configs.linters.hadolint") -- docker linter
 	local cpplint = require("efmls-configs.linters.cpplint") -- c/cpp linter
 	local clangformat = require("efmls-configs.formatters.clang_format") -- c/cpp formatter
-	local solhint = require("efmls-configs.linters.solhint") -- solidity linter
+	-- local solhint = require("efmls-configs.linters.solhint") -- solidity linter
 
 	vim.lsp.config("efm", {
 		capabilities = capabilities,
@@ -39,10 +39,10 @@ return function(capabilities)
 			"json",
 			"jsonc",
 			"lua",
-			"markdown",
+			-- "markdown",
 			"python",
 			"sh",
-      "solidity",
+      -- "solidity",
 			"svelte",
 			"typescript",
 			"typescriptreact",
@@ -69,10 +69,17 @@ return function(capabilities)
 				json = { eslint_d, fixjson },
 				jsonc = { eslint_d, fixjson },
 				lua = { luacheck, stylua },
-				markdown = { prettier_d },
+				-- markdown = { prettier_d },
+				-- markdown = {
+				--         vim.tbl_extend("force", prettier_d, {
+				--           formatCommand = "prettierd '${INPUT}' --print-width 78",
+				--           -- formatCommand = [[prettierd --print-width 78 --stdin-filepath '${INPUT}']],
+				--           -- formatCommand = "prettier_d --print-width 78 --stdin-filepath ${INPUT}"
+				--         })
+				--     },
 				python = { flake8, black },
 				sh = { shellcheck, shfmt },
-        solidity = { solhint, prettier_d },
+        -- solidity = { solhint, prettier_d },
 				svelte = { eslint_d, prettier_d },
 				typescript = { eslint_d, prettier_d },
 				typescriptreact = { eslint_d, prettier_d },
