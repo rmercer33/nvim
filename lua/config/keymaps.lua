@@ -4,7 +4,8 @@
 -- ================================================================================================
 
 -- Quick config editing
-vim.keymap.set("n", "<leader>rc", "<Cmd>e ~/.config/nvim/init.lua<CR>", { desc = "Edit config" })
+vim.keymap.set("n", "<leader>rc", "<Cmd>e ~/.config/nvim/init.lua<CR>", { desc = "Edit nvim config" })
+vim.keymap.set("n", "<leader>tc", "<Cmd>e ~/.config/tmux/tmux.conf<CR>", { desc = "Edit tmux config" })
 
 vim.keymap.set("n", "j", function()
 	return vim.v.count == 0 and "gj" or "j"
